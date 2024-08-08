@@ -1,9 +1,9 @@
 const pool = require("./pool");
 
-async function getAllUsernames() {
-  const { rows } = await pool.query("SELECT * FROM myDatabaseName");
+async function getAllItems() {
+  const { rows } = await pool.query("SELECT * FROM items");
   return rows;
 }
 module.exports = {
-  getAllUsernames,
+  getAllItems,
 };
