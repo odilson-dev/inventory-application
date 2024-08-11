@@ -5,15 +5,23 @@ async function getAllItems() {
   return rows;
 }
 
+async function getAllCategories() {
+  const { rows } = await pool.query("SELECT * FROM Categories");
+  return rows;
+}
 async function insertItem(item) {
   await pool.query("INSERT INTO items (item) VALUES ($1)", [item]);
 }
 
 async function insertCategory(category) {
-  console.log(category);
-  // await pool.query("INSERT INTO Categories (category) VALUES ($1)", [category]);
+  await pool.query(
+    "INSERT INTO Categories (name, createdAt, updatedAt) VALUES ($1, $2, $2)",
+    [category.name, "NOW()"]
+  );
 }
 module.exports = {
   getAllItems,
   insertItem,
+  insertCategory,
+  getAllCategories,
 };
