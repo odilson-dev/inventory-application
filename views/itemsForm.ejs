@@ -19,10 +19,20 @@
         <label for="">Price:</label><br />
         <input type="text" name="price" id="price" />
       </div>
+      <h2>The categories</h2>
+
+      <% categories.map((category) => { %>
       <div>
-        <label for="">Category:</label><br />
-        <input type="text" name="category" id="category" />
+        <input
+          type="radio"
+          name="categoryId"
+          class="category"
+          value="<%= category.id %>"
+        />
+        <label for=""><%= category.name %></label>
       </div>
+      <% }) %>
+
       <button type="submit">Create a new item</button>
     </form>
   </body>

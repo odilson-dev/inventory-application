@@ -7,7 +7,6 @@ async function createCategory(req, res) {
 
 async function getAllCategories(req, res) {
   const categories = await db.getAllCategories();
-  console.log("categories: ", categories);
   res.render("categories", { categories });
 }
 
