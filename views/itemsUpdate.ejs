@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Item</title>
+  </head>
+  <body>
+    <form action="" method="PUT">
+      <div>
+        <label for="">Name:</label><br />
+        <input type="text" name="name" id="name" value="<%= item.name%>" />
+      </div>
+      <div>
+        <label for="">Description:</label><br />
+        <input
+          type="text"
+          name="description"
+          id="description"
+          value="<%= item.description %>"
+        />
+      </div>
+      <div>
+        <label for="">Price:</label><br />
+        <input type="text" name="price" id="price" value="<%= item.price %>" />
+      </div>
+      <h2>The categories</h2>
+
+      <% categories.map((category) => { %>
+      <div>
+        <input type="radio" name="categoryId" class="category" value="<%=
+        category.id %>" <% if(category.id == item.categoryId ){ %> <%= select %>
+        <%}%> />
+        <label for=""><%= category.name %></label>
+      </div>
+      <% }) %>
+
+      <button type="submit">Update item</button>
+    </form>
+  </body>
+</html>
