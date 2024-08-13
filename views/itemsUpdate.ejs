@@ -29,8 +29,8 @@
       <% categories.map((category) => { %>
       <div>
         <input type="radio" name="categoryId" class="category" value="<%=
-        category.id %>" <% if(category.id == item.categoryId ){ %> <%= select %>
-        <%}%> />
+        category.id %>" <% if (category.id == item.categoryId) { %> checked <% }
+        %> />
         <label for=""><%= category.name %></label>
       </div>
       <% }) %>
