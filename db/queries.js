@@ -1,5 +1,17 @@
 const pool = require("./pool");
 
+async function getItemWithId(id) {
+  const query = {
+    // give the query a unique name
+    name: "fetch-item",
+    text: "SELECT * FROM items WHERE id = $1",
+    values: [id],
+  };
+
+  const res = await pool.query(query);
+  return res.rows[0];
+}
+
 async function getAllItems() {
   const { rows } = await pool.query("SELECT * FROM items");
   return rows;
@@ -26,5 +38,6 @@ module.exports = {
   getAllItems,
   insertItem,
   insertCategory,
+  getItemWithId,
   getAllCategories,
 };
