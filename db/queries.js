@@ -28,6 +28,13 @@ async function insertItem(item) {
   );
 }
 
+async function updateItem(item) {
+  await pool.query(
+    `UPDATE items SET name = $1, description = $2, price = $3, "categoryId" = $4, updatedAt = NOW() WHERE id = $5`,
+    [item.name, item.description, item.price, item.categoryId, item.id]
+  );
+}
+
 async function insertCategory(category) {
   await pool.query(
     "INSERT INTO Categories (name, createdAt, updatedAt) VALUES ($1, $2, $2)",
@@ -40,4 +47,5 @@ module.exports = {
   insertCategory,
   getItemWithId,
   getAllCategories,
+  updateItem,
 };
