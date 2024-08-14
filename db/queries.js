@@ -12,6 +12,18 @@ async function getItemWithId(id) {
   return res.rows[0];
 }
 
+async function getCategoryWithId(id) {
+  const query = {
+    // give the query a unique name
+    name: "fetch-category",
+    text: "SELECT * FROM categories WHERE id = $1",
+    values: [id],
+  };
+
+  const res = await pool.query(query);
+  return res.rows[0];
+}
+
 async function getAllItems() {
   const { rows } = await pool.query("SELECT * FROM items");
   return rows;
@@ -34,7 +46,12 @@ async function updateItem(item) {
     [item.name, item.description, item.price, item.categoryId, item.id]
   );
 }
-
+async function updateCategory(category) {
+  await pool.query(
+    `UPDATE Categories SET name = $1, updatedAt = NOW() WHERE id = $2`,
+    [category.name, category.id]
+  );
+}
 async function insertCategory(category) {
   await pool.query(
     "INSERT INTO Categories (name, createdAt, updatedAt) VALUES ($1, $2, $2)",
@@ -46,6 +63,9 @@ module.exports = {
   insertItem,
   insertCategory,
   getItemWithId,
+  getCategoryWithId,
   getAllCategories,
+  updateCategory,
+
   updateItem,
 };

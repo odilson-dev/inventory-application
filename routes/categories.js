@@ -10,4 +10,7 @@ router.get("/new", function (req, res, next) {
 });
 router.post("/new", categoriesController.createCategory);
 
+router.get("/:id/edit", categoriesController.updateCategoryGET);
+router.post("/:id", categoriesController.updateCategoryPOST);
+
 module.exports = router;

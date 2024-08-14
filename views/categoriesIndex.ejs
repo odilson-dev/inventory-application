@@ -7,6 +7,12 @@
   </head>
   <body>
     <h1>All categories</h1>
-    <%= categories.map((category) => category.name).join(", ")%>
+    <% categories.map((category) => {%>
+
+    <div>
+      <h2><%= category.name %></h2>
+      <a href="/categories/<%= category.id %>/edit">Edit this category</a>
+    </div>
+    <% })%>
   </body>
 </html>
