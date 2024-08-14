@@ -6,10 +6,11 @@
     <title>Update Item</title>
   </head>
   <body>
-    <form action="" method="PUT">
+    <form action="/items/<%= item.id %>" method="POST">
+      <input type="hidden" name="id" value="<%= item.id %>" />
       <div>
         <label for="">Name:</label><br />
-        <input type="text" name="name" id="name" value="<%= item.name%>" />
+        <input type="text" name="name" id="name" value="<%= item.name %>" />
       </div>
       <div>
         <label for="">Description:</label><br />
