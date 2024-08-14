@@ -24,4 +24,16 @@ async function updateItemGET(req, res) {
 
   res.render("itemsUpdate", { item, categories });
 }
-module.exports = { getItems, createItemsGET, createItemsPOST, updateItemGET };
+
+async function updateItemPOST(req, res) {
+  db.updateItem(req.body);
+
+  res.redirect("/items");
+}
+module.exports = {
+  getItems,
+  createItemsGET,
+  createItemsPOST,
+  updateItemGET,
+  updateItemPOST,
+};
