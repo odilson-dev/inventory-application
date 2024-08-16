@@ -58,6 +58,13 @@ async function insertCategory(category) {
     [category.name, "NOW()"]
   );
 }
+async function deleteItem(id) {
+  await pool.query("DELETE FROM Items WHERE id = $1", [id]);
+}
+
+async function deleteCategory(id) {
+  await pool.query("DELETE FROM Categories WHERE id = $1", [id]);
+}
 module.exports = {
   getAllItems,
   insertItem,
@@ -66,6 +73,7 @@ module.exports = {
   getCategoryWithId,
   getAllCategories,
   updateCategory,
-
+  deleteItem,
+  deleteCategory,
   updateItem,
 };

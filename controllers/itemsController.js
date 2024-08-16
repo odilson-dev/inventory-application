@@ -30,10 +30,16 @@ async function updateItemPOST(req, res) {
 
   res.redirect("/items");
 }
+
+async function deleteItem(req, res) {
+  db.deleteItem(req.params.id);
+  res.redirect("/items");
+}
 module.exports = {
   getItems,
   createItemsGET,
   createItemsPOST,
   updateItemGET,
   updateItemPOST,
+  deleteItem,
 };
