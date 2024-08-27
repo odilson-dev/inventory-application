@@ -63,7 +63,8 @@ async function deleteItem(id) {
 }
 
 async function deleteCategory(id) {
-  await pool.query("DELETE FROM Categories WHERE id = $1", [id]);
+  console.log(id);
+  await pool.query(`DELETE FROM Categories WHERE id = $1;`, [id]);
 }
 module.exports = {
   getAllItems,

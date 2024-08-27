@@ -22,9 +22,14 @@ async function updateCategoryPOST(req, res) {
 
   res.redirect("/categories");
 }
+async function deleteCategory(req, res) {
+  db.deleteCategory(req.params.id);
+  res.redirect("/categories");
+}
 module.exports = {
   createCategory,
   getAllCategories,
   updateCategoryGET,
   updateCategoryPOST,
+  deleteCategory,
 };

@@ -12,8 +12,9 @@ async function createItemsGET(req, res) {
 
 async function getItems(req, res) {
   const items = await db.getAllItems();
+  const categories = await db.getAllCategories();
 
-  res.render("itemsIndex", { items });
+  res.render("itemsIndex", { items, categories });
 }
 
 async function updateItemGET(req, res) {
