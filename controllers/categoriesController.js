@@ -1,4 +1,5 @@
 const db = require("../db/queries");
+const links = require("../routes/links");
 
 async function createCategory(req, res) {
   db.insertCategory(req.body);
@@ -7,7 +8,7 @@ async function createCategory(req, res) {
 
 async function getAllCategories(req, res) {
   const categories = await db.getAllCategories();
-  res.render("categoriesIndex", { categories });
+  res.render("categoriesIndex", { categories, links });
 }
 async function updateCategoryGET(req, res) {
   const { id } = req.params;

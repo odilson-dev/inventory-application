@@ -1,4 +1,5 @@
 const db = require("../db/queries");
+const links = require("../routes/links");
 
 async function createItemsPOST(req, res) {
   db.insertItem(req.body);
@@ -14,7 +15,7 @@ async function getItems(req, res) {
   const items = await db.getAllItems();
   const categories = await db.getAllCategories();
 
-  res.render("items", { items, categories });
+  res.render("items", { items, categories, links });
 }
 
 async function updateItemGET(req, res) {
