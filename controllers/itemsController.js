@@ -14,7 +14,7 @@ async function getItems(req, res) {
   const items = await db.getAllItems();
   const categories = await db.getAllCategories();
 
-  res.render("itemsIndex", { items, categories });
+  res.render("items", { items, categories });
 }
 
 async function updateItemGET(req, res) {
