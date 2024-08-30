@@ -2,8 +2,8 @@ const db = require("../db/queries");
 const links = require("../routes/links");
 
 async function createItemsPOST(req, res) {
+  console.log(req.body);
   db.insertItem(req.body);
-  res.redirect("/items");
 }
 
 async function createItemsGET(req, res) {

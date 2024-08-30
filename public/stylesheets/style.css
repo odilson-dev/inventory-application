@@ -1,8 +1,59 @@
 body {
-  padding: 50px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #005272;
+  padding: 10px;
+}
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 35px;
+  font-size: 20px;
+}
+
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+/* ITEMS */
+.items-section {
+  width: 70%;
+  margin: auto;
+}
+
+.items-description {
+  color: gray;
+}
+.item {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(1, 2fr) repeat(1, 1fr);
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: aliceblue;
+}
+.item-text > h2 {
+  margin: 5px 0;
+}
+.item-text > p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+.price-category-box > p {
+  margin: 0;
+}
+.price-category-box {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
 }

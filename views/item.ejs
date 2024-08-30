@@ -1,16 +1,21 @@
-<div>
-  <h2><%= item.name %></h2>
-  <p>Description: <%= item.description %></p>
+<div class="item">
+  <div class="item-text">
+    <h2><%= item.name %></h2>
+    <div class="price-category-box">
+      <% let categoryAssigned = false; %> <% for (const category of categories)
+      { %> <% if (category.id === item.categoryId) { %>
+      <p>Category: <%= category.name %></p>
+      <% categoryAssigned = true; %> <% break; %> <% } %> <% } %> <% if
+      (!categoryAssigned) { %>
+      <p>No category assigned</p>
+      <% } %>
+      <p>Price: <%= item.price %>$</p>
+    </div>
 
-  <% let categoryAssigned = false; %> <% for (const category of categories) { %>
-  <% if (category.id === item.categoryId) { %>
-  <p><%= category.name %></p>
-  <% categoryAssigned = true; %> <% break; %> <% } %> <% } %> <% if
-  (!categoryAssigned) { %>
-  <p>No category assigned</p>
-  <% } %>
-
-  <p>Price: <%= item.price %></p>
-  <a href="/items/<%= item.id %>/edit">Edit</a>
-  <button itemid="<%= item.id %>">Delete</button>
+    <p class="item-description"><%= item.description %></p>
+  </div>
+  <div class="item-buttons">
+    <a href="/items/<%= item.id %>/edit">Edit</a>
+    <button itemid="<%= item.id %>">Delete</button>
+  </div>
 </div>

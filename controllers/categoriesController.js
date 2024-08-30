@@ -3,6 +3,7 @@ const links = require("../routes/links");
 
 async function createCategory(req, res) {
   db.insertCategory(req.body);
+
   res.send(`Category: ${req.body.name}`);
 }
 

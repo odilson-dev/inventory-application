@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>List of Items</title>
   </head>
   <body>
     <%- include('header', { links }) %>
-    <h1>The list of items</h1>
-
-    <% items.map((item) =>{ %> <%- include('item', {item}); %> <%} ) %>
+    <section class="items-section">
+      <div class="item-box-title"><h2>The list of items</h2></div>
+      <div class="item-box">
+        <% items.map((item) =>{ %> <%- include('item', {item}); %> <%} ) %>
+      </div>
+      <a href="/items/new">Create a new item</a>
+    </section>
 
     <script>
       const allDeleteButtons = document.querySelectorAll("button");
