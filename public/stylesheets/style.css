@@ -26,7 +26,7 @@ li {
 }
 /* ITEMS */
 .items-section {
-  width: 70%;
+  width: 60%;
   margin: auto;
 }
 
@@ -37,9 +37,10 @@ li {
   padding: 15px;
   display: grid;
   grid-template-columns: repeat(1, 2fr) repeat(1, 1fr);
-  border: 1px solid black;
+  border: 1px solid rgb(143, 143, 143);
   border-radius: 5px;
   background-color: aliceblue;
+  margin-bottom: 25px;
 }
 .item-text > h2 {
   margin: 5px 0;
@@ -56,4 +57,15 @@ li {
   display: flex;
   justify-content: flex-start;
   gap: 30px;
+}
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.item-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
 }
