@@ -2,8 +2,11 @@ const db = require("../db/queries");
 const links = require("../routes/links");
 
 async function createItemsPOST(req, res) {
-  console.log(req.body);
   db.insertItem(req.body);
+  const items = await db.getAllItems();
+  const categories = await db.getAllCategories();
+
+  res.render("items", { items, categories, links });
 }
 
 async function createItemsGET(req, res) {

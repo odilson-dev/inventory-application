@@ -4,12 +4,12 @@ const links = require("../routes/links");
 async function createCategory(req, res) {
   db.insertCategory(req.body);
 
-  res.send(`Category: ${req.body.name}`);
+  res.render("categories");
 }
 
 async function getAllCategories(req, res) {
   const categories = await db.getAllCategories();
-  res.render("categoriesIndex", { categories, links });
+  res.render("categories", { categories, links });
 }
 async function updateCategoryGET(req, res) {
   const { id } = req.params;

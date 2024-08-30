@@ -35,7 +35,7 @@ async function getAllCategories() {
 }
 async function insertItem(item) {
   await pool.query(
-    "INSERT INTO items (name, description, price, categoryId, createdAt, updatedAt) VALUES ($1, $2, $3, $4, $5, $5)",
+    `INSERT INTO items (name, description, price, "categoryId", createdAt, updatedAt) VALUES ($1, $2, $3, $4, $5, $5)`,
     [item.name, item.description, item.price, item.categoryId, "NOW()"]
   );
 }
