@@ -9,11 +9,13 @@
   <body>
     <%- include('header', { links }) %>
     <section class="items-section">
-      <div class="item-box-title"><h2>The list of items</h2></div>
+      <div class="item-box-title">
+        <h2>List of <%= items.length %> items</h2>
+      </div>
       <div class="item-box">
         <% items.map((item) =>{ %> <%- include('item', {item}); %> <%} ) %>
       </div>
-      <a href="/items/new">Create a new item</a>
+      <a href="/items/new" class="add-item-btn">Create a new item</a>
     </section>
 
     <script>

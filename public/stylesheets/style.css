@@ -6,8 +6,11 @@ body {
 header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: #005272;
+  background-color: #62b1c7;
   padding: 10px;
+}
+header > h1 {
+  font-size: 30px;
 }
 nav > ul {
   display: flex;
@@ -18,7 +21,7 @@ nav > ul {
 }
 
 a {
-  color: #00b7ff;
+  color: white;
   text-decoration: none;
 }
 li {
@@ -37,7 +40,7 @@ li {
   padding: 15px;
   display: grid;
   grid-template-columns: repeat(1, 2fr) repeat(1, 1fr);
-  border: 1px solid rgb(143, 143, 143);
+  border: 3px solid rgb(150, 150, 150);
   border-radius: 5px;
   background-color: aliceblue;
   margin-bottom: 25px;
@@ -68,4 +71,17 @@ li {
   justify-content: flex-end;
   gap: 20px;
   align-items: center;
+}
+.add-item-btn {
+  display: block;
+  background-color: rgb(182, 248, 180);
+  border: 3px solid green;
+  border-radius: 5px;
+  width: 100%;
+  color: green;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  font-size: 25px;
+  text-align: center;
 }
