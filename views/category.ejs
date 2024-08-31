@@ -1,7 +1,6 @@
 <div class="category">
   <div class="category-text">
     <h2><%= category.name %></h2>
-
     <p>
       <%= items .filter((item) => item.categoryId == category.id) .map((item) =>
       item.name) .join(", ");%>

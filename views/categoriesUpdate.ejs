@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Update Category</title>
   </head>
   <body>
     <form action="/categories/<%= category.id %>/" method="POST">
+      <h1>Update the category <%= category.name %></h1>
       <input type="hidden" name="id" value="<%= category.id %>" />
       <div>
         <label for="">Name:</label><br />

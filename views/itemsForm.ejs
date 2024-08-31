@@ -3,33 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Create Item</title>
   </head>
   <body>
     <form action="/items/new" method="POST">
+      <h1>Create items</h1>
       <div>
-        <label for="">Name:</label><br />
+        <label for="name">Name:</label>
         <input type="text" name="name" id="name" />
       </div>
+      <label for="description">Description:</label><br />
+
+      <textarea
+        name="description"
+        id="description"
+        cols="30"
+        rows="10"
+      ></textarea>
       <div>
-        <label for="">Description:</label><br />
-        <input type="text" name="description" id="description" />
-      </div>
-      <div>
-        <label for="">Price:</label><br />
+        <label for="price">Price:</label>
         <input type="text" name="price" id="price" />
       </div>
-      <h2>The categories</h2>
+      <h2>The available categories:</h2>
 
       <% categories.map((category) => { %>
       <div>
-        <input
-          type="radio"
-          name="categoryId"
-          class="category"
-          value="<%= category.id %>"
-        />
-        <label for=""><%= category.name %></label>
+        <input type="radio" name="categoryId" />
+        <label for="categoryId"><%= category.name %></label>
       </div>
       <% }) %>
 
