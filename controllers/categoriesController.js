@@ -9,7 +9,9 @@ async function createCategory(req, res) {
 
 async function getAllCategories(req, res) {
   const categories = await db.getAllCategories();
-  res.render("categories", { categories, links });
+  const items = await db.getAllItems();
+
+  res.render("categories", { categories, links, items });
 }
 async function updateCategoryGET(req, res) {
   const { id } = req.params;

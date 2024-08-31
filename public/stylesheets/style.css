@@ -6,7 +6,7 @@ body {
 header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: #62b1c7;
+  background-color: #009dc9;
   padding: 10px;
 }
 header > h1 {

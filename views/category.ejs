@@ -1,0 +1,9 @@
+<div>
+  <h2><%= category.name %></h2>
+  <p>
+    <%= items .filter((item) => item.categoryId == category.id) .map((item) =>
+    item.name) .join(", ");%>
+  </p>
+  <a href="/categories/<%= category.id %>/edit">Edit this category</a>
+  <button categoryId="<%= category.id %>">Delete</button>
+</div>

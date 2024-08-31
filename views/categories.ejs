@@ -8,15 +8,9 @@
   </head>
   <body>
     <%- include('header', { links }) %>
-    <h1>All categories</h1>
-    <% categories.map((category) => {%>
-
-    <div>
-      <h2><%= category.name %></h2>
-      <a href="/categories/<%= category.id %>/edit">Edit this category</a>
-      <button categoryId="<%= category.id %>">Delete</button>
-    </div>
-    <% })%>
+    <h1>List of <%= categories.length %> categories</h1>
+    <% categories.map((category) => {%> <%- include('category', {category,
+    items}); %> <% })%>
 
     <a href="/categories/new">Create a new category</a>
     <script>
