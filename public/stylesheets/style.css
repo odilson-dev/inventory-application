@@ -28,7 +28,8 @@ li {
   list-style-type: none;
 }
 /* ITEMS */
-.items-section {
+.items-section,
+.categories-section {
   width: 60%;
   margin: auto;
 }
@@ -43,6 +44,15 @@ li {
   border: 3px solid rgb(150, 150, 150);
   border-radius: 5px;
   background-color: aliceblue;
+  margin-bottom: 25px;
+}
+.category {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(1, 2fr) repeat(1, 1fr);
+  border: 3px solid rgb(96, 0, 185);
+  border-radius: 5px;
+  background-color: rgba(178, 150, 255, 0.774);
   margin-bottom: 25px;
 }
 .item-text > h2 {
@@ -66,13 +76,15 @@ li {
   border: none;
   cursor: pointer;
 }
-.item-buttons {
+.item-buttons,
+.category-buttons {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
   align-items: center;
 }
-.add-item-btn {
+.add-item-btn,
+.add-category-btn {
   display: block;
   background-color: rgb(182, 248, 180);
   border: 3px solid green;

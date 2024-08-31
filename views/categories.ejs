@@ -8,11 +8,21 @@
   </head>
   <body>
     <%- include('header', { links }) %>
-    <h1>List of <%= categories.length %> categories</h1>
-    <% categories.map((category) => {%> <%- include('category', {category,
-    items}); %> <% })%>
 
-    <a href="/categories/new">Create a new category</a>
+    <section class="categories-section">
+      <div class="category-box-title">
+        <h1>List of <%= categories.length %> categories</h1>
+      </div>
+      <div class="item-box">
+        <% categories.map((category) => {%> <%- include('category', {category,
+        items}); %> <% })%>
+      </div>
+
+      <a href="/categories/new" class="add-category-btn"
+        >Create a new category</a
+      >
+    </section>
+
     <script>
       const allDeleteButtons = document.querySelectorAll("button");
 
