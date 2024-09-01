@@ -103,7 +103,7 @@ form {
   width: 50%;
   margin: auto;
   margin-top: 50px;
-  padding: 0 20px;
+  padding: 30px 20px;
   border-radius: 5px;
   box-shadow: 5px 5px 10px 5px rgb(0 0 0 / 20%);
 }
@@ -113,6 +113,7 @@ label {
 form > h1 {
   font-size: 40px;
   text-align: center;
+  margin-top: 0;
 }
 
 form > h2 {
@@ -130,4 +131,9 @@ button[type="submit"] {
   cursor: pointer;
   background-color: rgb(140, 238, 140);
   display: block;
+  border-radius: 10px;
+}
+.required-mark {
+  font-weight: bold;
+  color: rgb(235, 0, 0);
 }

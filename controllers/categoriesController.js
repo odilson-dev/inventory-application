@@ -4,7 +4,7 @@ const links = require("../routes/links");
 async function createCategory(req, res) {
   db.insertCategory(req.body);
 
-  res.render("categories");
+  res.redirect("/categories");
 }
 
 async function getAllCategories(req, res) {

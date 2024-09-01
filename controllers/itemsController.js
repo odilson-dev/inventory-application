@@ -3,10 +3,7 @@ const links = require("../routes/links");
 
 async function createItemsPOST(req, res) {
   db.insertItem(req.body);
-  const items = await db.getAllItems();
-  const categories = await db.getAllCategories();
-
-  res.render("items", { items, categories, links });
+  res.redirect("/items");
 }
 
 async function createItemsGET(req, res) {

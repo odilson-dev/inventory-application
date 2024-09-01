@@ -11,8 +11,14 @@
       <h1>Update the category <%= category.name %></h1>
       <input type="hidden" name="id" value="<%= category.id %>" />
       <div>
-        <label for="">Name:</label><br />
-        <input type="text" name="name" id="name" value="<%= category.name %>" />
+        <label for="">Name<span class="required-mark">*</span>:</label><br />
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value="<%= category.name %>"
+          required
+        />
       </div>
 
       <button type="submit">Update category</button>

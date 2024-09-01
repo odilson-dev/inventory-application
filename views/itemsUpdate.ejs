@@ -11,30 +11,28 @@
       <h1>Update the item <%= item.name %></h1>
       <input type="hidden" name="id" value="<%= item.id %>" />
       <div>
-        <label for="name">Name:</label>
+        <label for="name">Name<span class="required-mark">*</span>:</label>
         <input type="text" name="name" id="name" value="<%= item.name %>" />
       </div>
       <div>
-<label for="">Description:</label><br/>
+        <label for="">Description<span class="required-mark">*</span>:</label
+        ><br />
 
-        <textarea
-          name="description"
-          id="description"
-          
-          cols="30"
-          rows="10"
-        ><%= item.description %></textarea>
+        <textarea name="description" id="description" cols="40" rows="5">
+<%= item.description %></textarea
+        >
       </div>
       <div>
-        <label for="price>Price:</label>
+        <label for="price">Price<span class="required-mark">*</span>:</label>
         <input type="text" name="price" id="price" value="<%= item.price %>" />
       </div>
-      <h2>The categories</h2>
+      <h2>The categories available<span class="required-mark">*</span>:</h2>
 
       <% categories.map((category) => { %>
       <div>
-        <input id="categoryId" type="radio" name="categoryId" value="<%= category.id %>" <% if
-        (category.id == item.categoryId) { %> checked <% } %> />
+        <input id="categoryId" type="radio" name="categoryId" value="<%=
+        category.id %>" <% if (category.id == item.categoryId) { %> checked <% }
+        %> />
         <label for="categoryId"><%= category.name %></label>
       </div>
       <% }) %>

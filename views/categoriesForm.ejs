@@ -10,8 +10,8 @@
     <form action="/categories/new" method="post">
       <h1>Create categories</h1>
       <div>
-        <label for="">Name:</label><br />
-        <input type="text" name="name" id="name" />
+        <label for="">Name<span class="required-mark">*</span>:</label><br />
+        <input type="text" name="name" id="name" required/>
       </div>
 
       <button type="submit">Create a new category</button>
